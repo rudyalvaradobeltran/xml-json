@@ -1,5 +1,5 @@
 var xml2js = require('xml2js');
-var parseString = xml2js.parseString;
+var parser = new xml2js.Parser({explicitArray:false, mergeAttrs : true});
 var iconv = require('iconv-lite');
 const fs = require('fs');
 
@@ -8,7 +8,7 @@ exports.toJSON = (fileName) => {
     fs.readFile('./archivos/'+fileName, (err, data) => {
         const xml = iconv.decode(data, "UTF-8");
         try{
-            parseString(xml, function (err, result) {
+            parser.parseString(xml, function (err, result) {
                 fs.writeFile("./conversiones/"+fileNameNoExt+".json", JSON.stringify(result, null, 4), function(err) {
                     if (err) {
                         console.log("Error al guardar " + fileName);
