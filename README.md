@@ -1,16 +1,20 @@
-### XML-JSON
+# XML-JSON
 
-Convierte archivos XML en JSON y JSON en XML mediante línea de comandos.
+Converts XML files to JSON and JSON to XML via command line.
 
-#### Comandos
-convert: convierte archivo
+## Commands
+convert: converts file
 
-#### Opciones
--j: convierte archivo XML en JSON  
--x: converte archivo JSON en XML  
--a: convierte todos los archivos  
---file, --f: nombre del archivo
+## Options
+-j: converts a XML file into a JSON file  
+-x: converts a JSON file into a XML file  
+-a: converts all the files in the folder  
+--file, --f: file name
 
-#### Ejemplos
-node index.js convert -j --f F60T33-ejemplo.xml  
+## Examples
+```bash
+node index.js convert -j --f F60T33-ejemplo.xml
+```
+```bash
 node index.js convert -x -a
+```
